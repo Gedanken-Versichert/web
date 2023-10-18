@@ -10,7 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.3.2"
+    "@astrojs/sitemap": "^3.0.2",
+    "astro": "^3.3.2",
+    "sass": "^1.69.4"
   },
   "pkgx": "node bun"
 }
