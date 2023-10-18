@@ -1,5 +1,78 @@
 # Gedanken Versichert
 
+## Usage
+
+1. Open `src/config.json` in a text editor of your choice.
+
+2. Customise the values inside as needed. The details for the values can be found in [Configuration](#configuration).
+
+3. Follow the [build instructions](#build-instructions), and deploy the site!
+
+### Configuration
+
+`title` (_string_): The title of the site.
+
+`description` (_string_, optional): A short description of the site.
+
+`sections` (_array_): Array of sections, eg. Mathematik, Physik, etc. The values should be in the format:
+
+```json
+{
+    "title": "The title of the section",
+    
+    // See "links" below
+    "links": []
+}
+```
+
+`links` (_array_): The array of links in each section. Each link should be in the format:
+
+```json
+{
+    "title": "The title of the link",
+    "url": "A URL to the link"
+}
+```
+
+`touchWarning` (_string_): The warning to be shown to users with touch screens.
+
+Example config:
+
+```json
+{
+    "title": "Gedanken Versichert",
+    "description": "",
+    "sections": [
+        {
+            "title": "Mathematik",
+            "links": []
+        },
+        {
+            "title": "Physik",
+            "links": [
+                {
+                    "title": "Bewegung eines Balles - von Bendegúz & Botond",
+                    "url": "/programs/parabola-motion/"
+                },
+                {
+                    "title": "Newtonsche Gravitation - von Bendegúz",
+                    "url": "/programs/newtonsche-gravitation/"
+                },
+                {
+                    "title": "Vortex-Graphik - von Bendegúz",
+                    "url": "/programs/random-points/"
+                }
+            ]
+        },
+        {
+            "title": "Programmierung",
+            "links": []
+        }
+    ],
+    "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"
+}
+```
+
 ## Build instructions
 
 1.  ```sh
