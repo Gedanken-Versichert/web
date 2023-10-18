@@ -1,3 +1,10 @@
 :root {
     font-family: ui-serif, serif, system-ui;
+    background-color: var(--background);
+    color: var(--text);
+
+    // Colors
+    --theme-color: oklch(51.42% 0.236 272.37);
+    --background: oklch(0% 0.236 272.37);
+    --text: oklch(100% 0.236 272.37);
 }

@@ -1,10 +1,31 @@
+---
+import config from "../config.json";
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <header>
-    <h1>Gedanken Versichert</h1>
+    <h1>{title}</h1>
+    <p>{config.touchWarning}</p>
 </header>
 
 <style lang="scss">
     header {
         text-align: center;
         font-style: italic;
+    }
+
+    p {
+        color: red;
+        font-size: 1.125rem;
+        display: none;
+
+        @media (any-pointer: course) {
+            display: block;
+        }
     }
 </style>

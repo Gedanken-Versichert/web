@@ -1,0 +1,32 @@
+{
+    "title": "Gedanken Versichert",
+    "description": "",
+    "sections": [
+        {
+            "title": "Mathematik",
+            "links": []
+        },
+        {
+            "title": "Physik",
+            "links": [
+                {
+                    "title": "Bewegung eines Balles - von Bendegúz & Botond",
+                    "url": "/programs/parabola-motion/"
+                },
+                {
+                    "title": "Newtonsche Gravitation - von Bendegúz",
+                    "url": "/programs/newtonsche-gravitation/"
+                },
+                {
+                    "title": "Vortex-Graphik - von Bendegúz",
+                    "url": "/programs/random-points/"
+                }
+            ]
+        },
+        {
+            "title": "Programmierung",
+            "links": []
+        }
+    ],
+    "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"
+}

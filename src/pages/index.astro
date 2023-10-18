@@ -1,7 +1,23 @@
 ---
+import config from "../config.json";
+
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Section from "@components/Section.astro";
 ---
 
 <BaseLayout>
-    <h1>Gedanken Versichert</h1>
+    <main>
+        {config.sections.map(({ title, links }) => <Section {title} {links} />)}
+    </main>
 </BaseLayout>
+
+<style lang="scss">
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+        & h2 {
+            text-align: center;
+        }
+    }
+</style>

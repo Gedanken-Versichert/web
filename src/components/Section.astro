@@ -1,0 +1,60 @@
+---
+interface Props {
+    title: string;
+    links?: {
+        title: string;
+        url: string;
+    }[];
+}
+
+const { title, links } = Astro.props;
+---
+
+<section>
+    <h2>{title}</h2>
+    <div>
+        {
+            links &&
+                links.map((link) => (
+                    <a
+                        href={
+                            import.meta.env.PROD
+                                ? link.url
+                                : `https://gedankenversichert.com${link.url}`
+                        }
+                    >
+                        {link.title}
+                    </a>
+                ))
+        }
+    </div>
+</section>
+
+<style lang="scss">
+    h2 {
+        text-align: center;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    a {
+        background-color: var(--theme-color);
+        color: var(--text);
+        padding: 0.75rem;
+        width: 100%;
+        text-align: center;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.25s;
+        font-size: 1.125rem;
+
+        &:hover {
+            box-shadow: 0 0 0.5rem 0.25rem var(--theme-color);
+        }
+    }
+</style>

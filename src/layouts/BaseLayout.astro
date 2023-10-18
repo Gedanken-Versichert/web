@@ -1,4 +1,6 @@
 ---
+import config from "../config.json";
+
 import Footer from "@components/Footer.astro";
 import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
@@ -7,9 +9,9 @@ import "@styles/style.scss";
 ---
 
 <html lang="en">
-    <Head />
+    <Head title={config.title} description={config.description} />
     <body>
-        <Header />
+        <Header title={config.title} />
         <slot />
         <Footer />
         <style lang="scss">
@@ -17,7 +19,8 @@ import "@styles/style.scss";
                 min-height: 100dvh;
                 display: grid;
                 grid-template-rows: auto 1fr auto;
-                margin: 0;
+                max-width: 88dvw;
+                margin: 0 auto;
             }
         </style>
     </body>
