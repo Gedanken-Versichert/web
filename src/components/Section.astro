@@ -1,31 +1,40 @@
 ---
 interface Props {
     title: string;
-    links?: {
+    links: {
         title: string;
         url: string;
     }[];
+    sections?: Props[];
 }
 
-const { title, links } = Astro.props;
+const { title, links, sections, ...props } = Astro.props;
 ---
 
-<section>
+<section {...props}>
     <h2>{title}</h2>
     <div>
         {
-            links &&
-                links.map((link) => (
-                    <a
-                        href={
-                            import.meta.env.PROD
-                                ? link.url
-                                : `https://gedankenversichert.com${link.url}`
-                        }
-                    >
-                        {link.title}
-                    </a>
+            sections &&
+                sections.map(({ title, links, sections }) => (
+                    <>
+                        <Astro.self class="nested" {title} {links} {sections} />
+                        <hr />
+                    </>
                 ))
+        }
+        {
+            links.map((link) => (
+                <a
+                    href={
+                        import.meta.env.PROD
+                            ? link.url
+                            : `https://gedankenversichert.com${link.url}`
+                    }
+                >
+                    {link.title}
+                </a>
+            ))
         }
     </div>
 </section>
@@ -41,6 +50,7 @@ const { title, links } = Astro.props;
         text-align: center;
         margin: 0;
         padding-bottom: 1rem;
+        font-size: 2rem;
     }
 
     div {
@@ -54,7 +64,7 @@ const { title, links } = Astro.props;
         background-color: var(--accent);
         color: var(--text);
         padding: 0.75rem;
-        width: 100%;
+        width: calc(100% - 1.5rem);
         text-align: center;
         border-radius: 0.5rem;
         text-decoration: none;
@@ -63,6 +73,21 @@ const { title, links } = Astro.props;
 
         &:hover {
             box-shadow: 0 0 0.5rem 0.25rem var(--accent);
+        }
+    }
+
+    hr {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nested {
+        width: calc(100% - 1.5rem);
+
+        & h2 {
+            text-align: left;
+            font-size: 1.5rem;
         }
     }
 </style>

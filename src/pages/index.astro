@@ -7,7 +7,11 @@ import Section from "@components/Section.astro";
 
 <BaseLayout>
     <main>
-        {config.sections.map(({ title, links }) => <Section {title} {links} />)}
+        {
+            config.sections.map(({ title, links, sections }) => (
+                <Section {title} {links} {sections} />
+            ))
+        }
     </main>
 
     <style lang="scss">

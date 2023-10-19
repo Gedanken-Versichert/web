@@ -16,12 +16,17 @@
 
 `sections` (_array_): Array of sections, eg. Mathematik, Physik, etc. The values should be in the format:
 
-```json
+```jsonc
 {
     "title": "The title of the section",
     
     // See "links" below
-    "links": []
+    "links": [],
+
+    // You may nest sections as much as you want, though for display purposes
+    // it is not recommended to go over 2 layers of nesting.
+    // This sections value is optional.
+    "sections": []
 }
 ```
 
