@@ -4,7 +4,8 @@
     "sections": [
         {
             "title": "Mathematik",
-            "links": []
+            "links": [],
+            "sections": []
         },
         {
             "title": "Physik",
@@ -21,11 +22,13 @@
                     "title": "Vortex-Graphik - von Bendegúz",
                     "url": "/programs/random-points/"
                 }
-            ]
+            ],
+            "sections": []
         },
         {
             "title": "Programmierung",
-            "links": []
+            "links": [],
+            "sections": []
         }
     ],
     "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"

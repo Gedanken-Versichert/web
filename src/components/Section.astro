@@ -5,7 +5,7 @@ interface Props {
         title: string;
         url: string;
     }[];
-    sections?: Props[];
+    sections: Props[];
 }
 
 const { title, links, sections, ...props } = Astro.props;
@@ -15,13 +15,12 @@ const { title, links, sections, ...props } = Astro.props;
     <h2>{title}</h2>
     <div>
         {
-            sections &&
-                sections.map(({ title, links, sections }) => (
-                    <>
-                        <Astro.self class="nested" {title} {links} {sections} />
-                        <hr />
-                    </>
-                ))
+            sections.map(({ title, links, sections }) => (
+                <>
+                    <Astro.self class="nested" {title} {links} {sections} />
+                    <hr />
+                </>
+            ))
         }
         {
             links.map((link) => (

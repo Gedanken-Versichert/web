@@ -25,7 +25,7 @@
 
     // You may nest sections as much as you want, though for display purposes
     // it is not recommended to go over 2 layers of nesting.
-    // This sections value is optional.
+    // This sections value is optional, you can just leave it empty.
     "sections": []
 }
 ```
@@ -50,7 +50,8 @@ Example config:
     "sections": [
         {
             "title": "Mathematik",
-            "links": []
+            "links": [],
+            "sections": []
         },
         {
             "title": "Physik",
@@ -67,11 +68,13 @@ Example config:
                     "title": "Vortex-Graphik - von Bendegúz",
                     "url": "/programs/random-points/"
                 }
-            ]
+            ],
+            "sections": []
         },
         {
             "title": "Programmierung",
-            "links": []
+            "links": [],
+            "sections": []
         }
     ],
     "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"
