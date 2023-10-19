@@ -4,7 +4,12 @@
     "sections": [
         {
             "title": "Mathematik",
-            "links": [],
+            "links": [
+                {
+                    "title": "Primzahl-Test - von Botond",
+                    "url": "/programs/prime-test/"
+                }
+            ],
             "sections": []
         },
         {

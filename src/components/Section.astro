@@ -22,19 +22,7 @@ const { title, links, sections, ...props } = Astro.props;
                 </>
             ))
         }
-        {
-            links.map((link) => (
-                <a
-                    href={
-                        import.meta.env.PROD
-                            ? link.url
-                            : `https://gedankenversichert.com${link.url}`
-                    }
-                >
-                    {link.title}
-                </a>
-            ))
-        }
+        {links.map((link) => <a href={link.url}>{link.title}</a>)}
     </div>
 </section>
 
