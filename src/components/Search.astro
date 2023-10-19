@@ -1,0 +1,22 @@
+<input type="text" id="search" placeholder="Search..." />
+
+<style lang="scss">
+    input {
+        margin-bottom: 1rem;
+        background-color: var(--background);
+        border: 0.125rem solid var(--text);
+        font-family: ui-serif, "Zodiak", serif;
+        color: var(--text);
+        font-size: 1.125rem;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        transition: all 0.25s;
+
+        &:focus {
+            box-shadow: 0 0 0.5rem 0.25rem var(--accent);
+            outline: none;
+        }
+    }
+</style>
+
+<script src="@scripts/search.ts"></script>
