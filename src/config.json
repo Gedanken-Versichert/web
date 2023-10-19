@@ -17,17 +17,18 @@
                 {
                     "title": "Newtonsche Gravitation - von Bendegúz",
                     "url": "/programs/newtonsche-gravitation/"
-                },
-                {
-                    "title": "Vortex-Graphik - von Bendegúz",
-                    "url": "/programs/random-points/"
                 }
             ],
             "sections": []
         },
         {
             "title": "Programmierung",
-            "links": [],
+            "links": [
+                {
+                    "title": "Vortex-Graphik - von Bendegúz",
+                    "url": "/programs/random-points/"
+                }
+            ],
             "sections": []
         }
     ],
