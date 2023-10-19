@@ -16,10 +16,7 @@ const { title, links, sections, ...props } = Astro.props;
     <div>
         {
             sections.map(({ title, links, sections }) => (
-                <>
-                    <Astro.self class="nested" {title} {links} {sections} />
-                    <hr />
-                </>
+                <Astro.self class="nested" {title} {links} {sections} />
             ))
         }
         {links.map((link) => <a href={link.url}>{link.title}</a>)}
@@ -39,6 +36,7 @@ const { title, links, sections, ...props } = Astro.props;
         padding-bottom: 1rem;
         font-size: 2rem;
         font-weight: 750;
+        transition: all 0.25s;
     }
 
     div {
@@ -64,18 +62,51 @@ const { title, links, sections, ...props } = Astro.props;
         }
     }
 
-    hr {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
     .nested {
         width: calc(100% - 1.5rem);
+        display: grid;
+        transition: all 0.25s;
+        cursor: pointer;
 
         & h2 {
             text-align: left;
             font-size: 1.5rem;
+            padding-bottom: 0;
+        }
+
+        & div {
+            transform: scaleY(0);
+            transform-origin: top;
+            opacity: 0;
+            height: 0;
+            transition: all 0.25s;
+        }
+
+        &[open] {
+            & h2 {
+                padding-bottom: 1rem;
+            }
+
+            & div {
+                transform: scaleY(100%);
+                opacity: 1;
+            }
         }
     }
 </style>
+
+<script>
+    document.querySelectorAll<HTMLDivElement>(".nested").forEach((section) => {
+        section.addEventListener("click", () => {
+            section.toggleAttribute("open");
+
+            const div = section.querySelector("div")!;
+
+            if (div.style.height) {
+                div.style.removeProperty("height");
+            } else {
+                div.style.height = `${div.scrollHeight}px`;
+            }
+        });
+    });
+</script>
