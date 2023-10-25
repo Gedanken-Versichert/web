@@ -18,8 +18,10 @@ input?.addEventListener("input", () => {
         section.querySelectorAll("a").forEach((a) => {
             if (input.value !== "") {
                 a.style.display = "none";
+                section.style.display = "none";
             } else {
                 a.style.display = "initial";
+                section.style.display = "initial";
             }
         });
     });
@@ -32,5 +34,6 @@ input?.addEventListener("input", () => {
                 `a[href="${ result.item.url }"]`,
             )!;
             resultLink.style.display = "initial";
+            resultLink.closest("section")!.style.display = "initial";
         });
 });
