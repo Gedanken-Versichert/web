@@ -22,6 +22,10 @@
                 {
                     "title": "Newtonsche Gravitation - von Bendegúz",
                     "url": "/programs/newtonsche-gravitation/"
+                },
+                {
+                    "title": "Two-body simulation using Verlet Integration - von Bendegúz & Botond",
+                    "url": "/programs/two-body-problem/"
                 }
             ],
             "sections": []
@@ -30,7 +34,7 @@
             "title": "Programmierung",
             "links": [
                 {
-                    "title": "Vortex-Grafik - von Bendegúz",
+                    "title": "Vortex-Graphik - von Bendegúz",
                     "url": "/programs/random-points/"
                 }
             ],
