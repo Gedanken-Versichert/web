@@ -3,47 +3,47 @@
     "description": "",
     "sections": [
         {
-            "title": "Mathematik",
+            "title": "Mathetmatics",
             "links": [
                 {
-                    "title": "Primzahl-Test - von Botond",
+                    "title": "Primality test - by Botond",
                     "url": "/programs/prime-test/"
                 },
                 {
-                    "title": "Calculus problems - von Bendegúz",
+                    "title": "Calculus problems - by Bendegúz",
                     "url": "/programs/calculus-problems/"
                 }
             ],
             "sections": []
         },
         {
-            "title": "Physik",
+            "title": "Physics",
             "links": [
                 {
-                    "title": "Bewegung eines Balles - von Bendegúz & Botond",
+                    "title": "Parabola motion - by Bendegúz & Botond",
                     "url": "/programs/parabola-motion/"
                 },
                 {
-                    "title": "Newtonsche Gravitation - von Bendegúz",
+                    "title": "Newtonian gravitation - by Bendegúz",
                     "url": "/programs/newtonsche-gravitation/"
                 },
                 {
-                    "title": "Two-body simulation using Verlet Integration - von Bendegúz & Botond",
+                    "title": "Two-body simulation using Verlet Integration - by Bendegúz & Botond",
                     "url": "/programs/two-body-simulation/"
                 }
             ],
             "sections": []
         },
         {
-            "title": "Programmierung",
+            "title": "Programming",
             "links": [
                 {
-                    "title": "Vortex-Graphik - von Bendegúz",
+                    "title": "Vortex graphics - by Bendegúz",
                     "url": "/programs/random-points/"
                 }
             ],
             "sections": []
         }
     ],
-    "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"
+    "touchWarning": "WARNING: \"Parabola motion\" and \"Vortex graphics\" are not optimized for mobile devices."
 }
