@@ -10,10 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.0.2",
-    "astro": "^3.3.4",
+    "@astrojs/sitemap": "^3.0.3",
+    "astro": "^3.4.3",
     "fuse.js": "^6.6.2",
-    "sass": "^1.69.4"
-  },
-  "pkgx": "node@18 bun"
+    "sass": "^1.69.5"
+  }
 }
