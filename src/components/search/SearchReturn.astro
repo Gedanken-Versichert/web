@@ -1,0 +1,28 @@
+---
+import { Undo2 } from "lucide-astro";
+---
+
+<button id="return"><Undo2 /></button>
+
+<style lang="scss">
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--text);
+    }
+</style>
+
+<script>
+    const searchOverlay =
+        document.querySelector<HTMLDivElement>("#search-overlay")!;
+    document.querySelector("#return")?.addEventListener("click", () => {
+        searchOverlay.style.opacity = "0";
+        searchOverlay.style.visibility = "hidden";
+        setTimeout(() => (searchOverlay.style.display = "none"), 250);
+    });
+</script>

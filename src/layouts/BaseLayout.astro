@@ -6,22 +6,32 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 
 import "@styles/style.scss";
+import "@styles/search.scss";
+import SearchOverlay from "@src/components/search/SearchOverlay.astro";
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title = config.title, description = config.description } = Astro.props;
 ---
 
 <html lang="en">
-    <Head title={config.title} description={config.description} />
+    <Head {title} {description} />
     <body>
-        <Header title={config.title} />
+        <Header {title} />
         <slot />
         <Footer />
         <style lang="scss">
             body {
                 min-height: 100dvh;
                 display: grid;
-                grid-template-rows: auto auto 1fr auto;
+                grid-template-rows: auto 1fr auto;
                 max-width: 88dvw;
                 margin: 0 auto;
             }
         </style>
+        <SearchOverlay />
     </body>
 </html>

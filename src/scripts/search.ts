@@ -12,28 +12,35 @@ const fuse = new Fuse(links, {
 });
 
 const input = document.querySelector<HTMLInputElement>("#search");
+const fallback = document.querySelector<HTMLParagraphElement>("#fallback")!;
+const linkElems = document.querySelectorAll<HTMLAnchorElement>(".link");
 
 input?.addEventListener("input", () => {
-    document.querySelectorAll("section").forEach((section) => {
-        section.querySelectorAll("a").forEach((a) => {
-            if (input.value !== "") {
-                a.style.display = "none";
-                section.style.display = "none";
-            } else {
-                a.style.display = "initial";
-                section.style.display = "initial";
-            }
-        });
-    });
-
     const results = fuse.search(input.value);
 
-    results &&
-        results.forEach((result) => {
+    if (results.length !== 0) {
+        linkElems.forEach(link => {
+            link.style.display = "none";
+        });
+        fallback.style.display = "none";
+
+        results.forEach(result => {
             const resultLink = document.querySelector<HTMLAnchorElement>(
-                `a[href="${ result.item.url }"]`,
+                `.link[href="${ result.item.url }"]`,
             )!;
             resultLink.style.display = "initial";
-            resultLink.closest("section")!.style.display = "initial";
         });
+    } else {
+        fallback.style.display = "block";
+        linkElems.forEach(link => {
+            link.style.display = "none";
+        });
+    }
+
+    if (input.value === "") {
+        linkElems.forEach(link => {
+            link.style.display = "block";
+        });
+        fallback.style.display = "none";
+    }
 });

@@ -8,5 +8,6 @@
 
     --accent: oklch(51.42% 0.236 var(--hue));
     --background: oklch(0% 0.175 var(--hue));
+    --translucent: oklch(0% 0.175 var(--hue) / 80%);
     --text: oklch(100% 0.25 var(--hue));
 }

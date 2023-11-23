@@ -1,5 +1,6 @@
 ---
 import config from "@src/config.json";
+import SearchButton from "./search/SearchButton.astro";
 
 interface Props {
     title: string;
@@ -21,11 +22,13 @@ const { title } = Astro.props;
             </a>
         )
     }
+    <SearchButton />
 </header>
 
 <style lang="scss">
     header {
         text-align: center;
+        position: relative;
     }
 
     h1 {

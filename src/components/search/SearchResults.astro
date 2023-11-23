@@ -1,0 +1,42 @@
+---
+import config from "@src/config.json";
+
+const links = config.sections.flatMap((section) =>
+    section.links.flatMap((link) => link),
+);
+---
+
+<ul id="results">
+    {
+        links.map((link) => (
+            <a class="link" href={link.url}>
+                {link.title}
+            </a>
+        ))
+    }
+    <p id="fallback">No results found</p>
+</ul>
+
+<style lang="scss">
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        border-bottom: 0.125rem solid var(--text);
+        padding-left: 0;
+        width: min(64rem, 88dvw);
+        font-size: 1.125rem;
+
+        a {
+            border-top: 0.125rem solid var(--text);
+            padding: 1rem 0;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        p {
+            display: none;
+            text-align: center;
+        }
+    }
+</style>

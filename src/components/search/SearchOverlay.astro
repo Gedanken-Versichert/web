@@ -1,0 +1,41 @@
+---
+import SearchReturn from "./SearchReturn.astro";
+import SearchBar from "./SearchBar.astro";
+import SearchResults from "./SearchResults.astro";
+---
+
+<div id="search-overlay">
+    <span>
+        <SearchReturn />
+        <SearchBar />
+    </span>
+    <SearchResults />
+</div>
+
+<style lang="scss">
+    div {
+        position: absolute;
+        height: 100dvh;
+        width: 100dvw;
+        top: 0;
+        left: 0;
+        background-color: var(--translucent);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+        display: none;
+        align-items: center;
+        padding-top: 4rem;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.25s;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+</style>
+
+<script src="@scripts/search.ts"></script>

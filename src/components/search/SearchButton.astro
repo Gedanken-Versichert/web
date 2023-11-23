@@ -1,0 +1,42 @@
+---
+import { Search } from "lucide-astro";
+---
+
+<button id="search-button"><Search /></button>
+
+<style lang="scss">
+    button {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        cursor: pointer;
+        background-color: var(--background);
+        border: 0.125rem solid var(--accent);
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.25s;
+        translate: 0 -50%;
+
+        &:hover {
+            background-color: var(--accent);
+        }
+    }
+
+    svg {
+        color: var(--text);
+    }
+</style>
+
+<script>
+    const searchOverlay =
+        document.querySelector<HTMLDivElement>("#search-overlay")!;
+    document.querySelector("#search-button")?.addEventListener("click", () => {
+        searchOverlay.style.display = "flex";
+        setTimeout(() => {
+            searchOverlay.style.visibility = "visible";
+            searchOverlay.style.opacity = "1";
+        }, 0);
+    });
+</script>
