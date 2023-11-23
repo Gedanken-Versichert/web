@@ -6,9 +6,6 @@ import { Search } from "lucide-astro";
 
 <style lang="scss">
     button {
-        position: absolute;
-        top: 50%;
-        right: 1rem;
         cursor: pointer;
         background-color: var(--background);
         border: 0.125rem solid var(--accent);
@@ -17,7 +14,7 @@ import { Search } from "lucide-astro";
         justify-content: center;
         align-items: center;
         transition: all 0.25s;
-        translate: 0 -50%;
+        height: fit-content;
 
         &:hover {
             background-color: var(--accent);

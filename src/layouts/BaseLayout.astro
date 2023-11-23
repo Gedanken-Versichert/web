@@ -13,13 +13,16 @@ interface Props {
     description?: string;
 }
 
-const { title = config.title, description = config.description } = Astro.props;
+const { title, description = config.description } = Astro.props;
 ---
 
 <html lang="en">
-    <Head {title} {description} />
+    <Head
+        title={title ? `${title} | ${config.title}` : config.title}
+        {description}
+    />
     <body>
-        <Header {title} />
+        <Header />
         <slot />
         <Footer />
         <style lang="scss">
