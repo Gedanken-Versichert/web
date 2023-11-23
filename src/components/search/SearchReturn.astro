@@ -20,9 +20,20 @@ import { Undo2 } from "lucide-astro";
 <script>
     const searchOverlay =
         document.querySelector<HTMLDivElement>("#search-overlay")!;
-    document.querySelector("#return")?.addEventListener("click", () => {
+    document
+        .querySelector("#return")
+        ?.addEventListener("click", hideSearchOverlay);
+
+    // Add Esc keyboard shortcut to exit search overlay
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            hideSearchOverlay();
+        }
+    });
+
+    function hideSearchOverlay() {
         searchOverlay.style.opacity = "0";
         searchOverlay.style.visibility = "hidden";
         setTimeout(() => (searchOverlay.style.display = "none"), 250);
-    });
+    }
 </script>

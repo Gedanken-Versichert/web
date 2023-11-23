@@ -32,11 +32,26 @@ import { Search } from "lucide-astro";
 <script>
     const searchOverlay =
         document.querySelector<HTMLDivElement>("#search-overlay")!;
-    document.querySelector("#search-button")?.addEventListener("click", () => {
+    document
+        .querySelector("#search-button")
+        ?.addEventListener("click", showSearchOverlay);
+
+    // Add ⌘+K and Ctrl+K shortcuts for opening the search overlay
+    document.addEventListener("keydown", (e) => {
+        if ((e.metaKey && e.key === "f") || (e.ctrlKey && e.key === "f")) {
+            e.preventDefault();
+            showSearchOverlay();
+        }
+    });
+
+    function showSearchOverlay() {
         searchOverlay.style.display = "flex";
         setTimeout(() => {
             searchOverlay.style.visibility = "visible";
             searchOverlay.style.opacity = "1";
         }, 0);
-    });
+        setTimeout(() => {
+            document.querySelector<HTMLInputElement>("#search")?.focus();
+        }, 250);
+    }
 </script>
