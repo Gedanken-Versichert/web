@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.6.0",
+    "astro": "^3.6.4",
     "fuse.js": "^7.0.0",
-    "lucide-astro": "^0.292.0",
+    "lucide-astro": "^0.294.0",
     "sass": "^1.69.5"
   }
 }
