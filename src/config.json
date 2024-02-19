@@ -36,6 +36,10 @@
                 {
                     "title": "Vortex graphics - by Bendegúz",
                     "url": "/programs/random-points/"
+                },
+                {
+                    "title": "A* algorithm: Maze solver - by Botond",
+                    "url": "/programs/astar-maze/"
                 }
             ],
             "sections": []
