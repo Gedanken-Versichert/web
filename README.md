@@ -8,102 +8,28 @@
 
 3. Follow the [build instructions](#build-instructions), and deploy the site!
 
-### Configuration
-
-`title` (_string_): The title of the site.
-
-`description` (_string_, optional): A short description of the site.
-
-`sections` (_array_): Array of sections, eg. Mathematik, Physik, etc. The values should be in the format:
-
-```jsonc
-{
-    "title": "The title of the section",
-    
-    // See "links" below
-    "links": [],
-
-    // You may nest sections as much as you want, though for display purposes
-    // it is not recommended to go over 2 layers of nesting.
-    // This sections value is optional, you can just leave it empty.
-    "sections": []
-}
-```
-
-`links` (_array_): The array of links in each section. Each link should be in the format:
-
-```json
-{
-    "title": "The title of the link",
-    "url": "A URL to the link"
-}
-```
-
-`touchWarning` (_string_): The warning to be shown to users with touch screens.
-
-Example config:
-
-```json
-{
-    "title": "Gedanken Versichert",
-    "description": "",
-    "sections": [
-        {
-            "title": "Mathematik",
-            "links": [],
-            "sections": []
-        },
-        {
-            "title": "Physik",
-            "links": [
-                {
-                    "title": "Bewegung eines Balles - von Bendegúz & Botond",
-                    "url": "/programs/parabola-motion/"
-                },
-                {
-                    "title": "Newtonsche Gravitation - von Bendegúz",
-                    "url": "/programs/newtonsche-gravitation/"
-                },
-                {
-                    "title": "Vortex-Graphik - von Bendegúz",
-                    "url": "/programs/random-points/"
-                }
-            ],
-            "sections": []
-        },
-        {
-            "title": "Programmierung",
-            "links": [],
-            "sections": []
-        }
-    ],
-    "touchWarning": "WARNUNG: Diese Programme funktionieren nicht mit Touchscreens"
-}
-```
-
 ## Build instructions
 
-1.  ```sh
-    git clone https://github.com/Gedanken-Versichert/web.git
-    cd web
-    ```
+1. Clone the repository
 
-2.  ```sh
-    bun install
-    bun dev
-    ```
+   ```sh
+   git clone https://github.com/Gedanken-Versichert/web.git
+   cd web
+   ```
 
-    Then open `localhost:4321` in your browser to see a live preview of the site.
+2. Install dependencies and start the development server.
 
-3.  ```sh
-    bun run build
-    ```
-    This will build the site and place it in `dist/`
+   ```sh
+   bun install
+   bun dev
+   ```
 
-## Licenses
+   Then open `localhost:3000` in your browser to see a live preview of the site.
 
-All of the code in this repository is under the [MIT license](./LICENSE), unless specified otherwise.
+3. Build the site.
 
-The licenses of all dependencies are in their respective folders in `node_modules/` when you install them with `npm install`.
+   ```sh
+   bun run build
+   ```
 
-[Astro](https://astro.build/), the static site generator used to generate these sites, is licensed under the [MIT license](https://github.com/withastro/astro/blob/main/LICENSE).
+   This will build the site and place it in `dist/`

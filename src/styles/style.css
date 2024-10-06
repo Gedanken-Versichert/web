@@ -1,0 +1,82 @@
+:root {
+	font-family: ui-serif, "Zodiak", serif;
+	background-color: var(--background);
+	color: var(--text);
+
+	/* Colors */
+	--hue: 272.37;
+
+	--accent: oklch(51.42% 0.236 var(--hue));
+	--background: oklch(0% 0.175 var(--hue));
+	--translucent: oklch(0% 0.175 var(--hue) / 80%);
+	--text: oklch(100% 0.25 var(--hue));
+}
+
+header {
+	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	span,
+	a {
+		flex-grow: 1;
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 900;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 900;
+	}
+
+	p {
+		color: red;
+		font-size: 1.125rem;
+		display: none;
+
+		@media (any-pointer: coarse) {
+			display: block;
+		}
+	}
+
+	a {
+		color: var(--text);
+		text-decoration: none;
+		flex-grow: 1;
+	}
+}
+
+footer {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	gap: 0.25rem;
+
+	a {
+		color: var(--text);
+	}
+}
+
+#search-button {
+	cursor: pointer;
+	background-color: var(--background);
+	border: 0.125rem solid var(--accent);
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.25s;
+	height: fit-content;
+
+	&:hover {
+		background-color: var(--accent);
+	}
+
+	svg {
+		color: var(--text);
+	}
+}

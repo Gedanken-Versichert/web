@@ -1,0 +1,58 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"description": "Configuration file for the Gedanken Versichert website",
+	"properties": {
+		"title": {
+			"type": "string",
+			"description": "The title of the site."
+		},
+		"description": {
+			"type": "string",
+			"description": "A short description of the site, optional."
+		},
+		"sections": {
+			"type": "array",
+			"description": "Array of sections, eg. Mathematik, Physik, etc.",
+			"items": {
+				"type": "object",
+				"description": "A section containing links and possibly subsections",
+				"properties": {
+					"title": {
+						"type": "string",
+						"description": "The title of the section"
+					},
+					"links": {
+						"type": "array",
+						"description": "The array of links in each section",
+						"items": {
+							"type": "object",
+							"description": "A link to a program or resource",
+							"properties": {
+								"title": {
+									"type": "string",
+									"description": "The title of the link"
+								},
+								"url": {
+									"type": "string",
+									"description": "A URL to the link"
+								}
+							},
+							"required": ["title", "url"]
+						}
+					},
+					"sections": {
+						"type": "array",
+						"description": "An array of subsections (can be empty). It is not recommended to go over 2 layers of nesting for display purposes."
+					}
+				},
+				"required": ["title", "links", "sections"]
+			}
+		},
+		"touchWarning": {
+			"type": "string",
+			"description": "The warning to be shown to users with touch screens."
+		}
+	},
+	"required": ["title", "description", "sections", "touchWarning"]
+}
