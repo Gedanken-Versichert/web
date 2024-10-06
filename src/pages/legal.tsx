@@ -1,7 +1,6 @@
 import config from "@/config.json";
 import legalMD from "./legal.md" with { type: "text" };
 import { Marked } from "marked";
-import { Search } from "lucide-static";
 
 const legalHTML = await new Marked().parse(legalMD);
 
@@ -27,7 +26,6 @@ export function LegalPage() {
 						<a href="/">
 							<h2>{config.title}</h2>
 						</a>
-						<button id="search-button">{Search}</button>
 					</header>
 					{legalHTML}
 					<footer>

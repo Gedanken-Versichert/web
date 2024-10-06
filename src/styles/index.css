@@ -58,12 +58,25 @@ section {
 		display: grid;
 		transition: all 0.25s;
 		cursor: pointer;
+#search-button {
+	cursor: pointer;
+	background-color: var(--background);
+	border: 0.125rem solid var(--accent);
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.25s;
+	height: fit-content;
 
 		& h2 {
 			text-align: left;
 			font-size: 1.5rem;
 			padding-bottom: 0;
 		}
+	&:hover {
+		background-color: var(--accent);
+	}
 
 		& div {
 			transform: scaleY(0);
@@ -72,6 +85,10 @@ section {
 			height: 0;
 			transition: all 0.25s;
 		}
+	svg {
+		color: var(--text);
+	}
+}
 
 		&[open] {
 			& h2 {
