@@ -40,13 +40,9 @@
 							},
 							"required": ["title", "url"]
 						}
-					},
-					"sections": {
-						"type": "array",
-						"description": "An array of subsections (can be empty). It is not recommended to go over 2 layers of nesting for display purposes."
 					}
 				},
-				"required": ["title", "links", "sections"]
+				"required": ["title", "links"]
 			}
 		},
 		"touchWarning": {

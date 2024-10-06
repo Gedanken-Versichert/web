@@ -10,8 +10,7 @@
 					"title": "Primality test - by Botond",
 					"url": "/programs/prime-test/"
 				}
-			],
-			"sections": []
+			]
 		},
 		{
 			"title": "Physics",
@@ -28,8 +27,7 @@
 					"title": "Two-body simulation using Verlet Integration - by Bendegúz & Botond",
 					"url": "/programs/two-body-simulation/"
 				}
-			],
-			"sections": []
+			]
 		},
 		{
 			"title": "Programming",
@@ -42,8 +40,7 @@
 					"title": "A* algorithm: Maze solver - by Botond",
 					"url": "/programs/astar-maze/"
 				}
-			],
-			"sections": []
+			]
 		}
 	],
 	"touchWarning": "WARNING: \"Parabola motion\" and \"Vortex graphics\" are not optimized for mobile devices."

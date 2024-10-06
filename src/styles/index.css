@@ -49,12 +49,8 @@ section {
 			box-shadow: 0 0 0.5rem 0.25rem var(--accent);
 		}
 	}
+}
 
-	&.nested {
-		width: calc(100% - 1.5rem);
-		display: grid;
-		transition: all 0.25s;
-		cursor: pointer;
 #search-button {
 	cursor: pointer;
 	background-color: var(--background);
@@ -66,36 +62,15 @@ section {
 	transition: all 0.25s;
 	height: fit-content;
 
-		& h2 {
-			text-align: left;
-			font-size: 1.5rem;
-			padding-bottom: 0;
-		}
 	&:hover {
 		background-color: var(--accent);
 	}
 
-		& div {
-			transform: scaleY(0);
-			transform-origin: top;
-			opacity: 0;
-			height: 0;
-			transition: all 0.25s;
-		}
 	svg {
 		color: var(--text);
 	}
 }
 
-		&[open] {
-			& h2 {
-				padding-bottom: 1rem;
-			}
 
-			& div {
-				transform: scaleY(100%);
-				opacity: 1;
-			}
-		}
 	}
 }

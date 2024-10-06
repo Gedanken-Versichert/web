@@ -24,39 +24,6 @@ function SearchOverlay() {
 	);
 }
 
-interface SectionProps {
-	title: string;
-	links: {
-		title: string;
-		url: string;
-	}[];
-	sections: SectionProps[];
-	className?: string;
-}
-
-function Section(props: SectionProps) {
-	const { title, links, sections, className } = props;
-
-	return (
-		<section class={className}>
-			<h2>{title}</h2>
-			<div>
-				{sections.map(({ title, links, sections }) => (
-					<Section
-						className="nested"
-						title={title}
-						links={links}
-						sections={sections}
-					/>
-				))}
-				{links.map((link) => (
-					<a href={link.url}>{link.title}</a>
-				))}
-			</div>
-		</section>
-	);
-}
-
 export function IndexPage() {
 	return (
 		<>
@@ -74,7 +41,6 @@ export function IndexPage() {
 					<link rel="stylesheet" href="/style.css" />
 					<link rel="stylesheet" href="/index.css" />
 					<link rel="stylesheet" href="/search.css" />
-					<script type="module" src="/section.js"></script>
 					<script type="module" src="/search.js"></script>
 				</head>
 				<body>
@@ -86,8 +52,15 @@ export function IndexPage() {
 						<button id="search-button">{Search}</button>
 					</header>
 					<main>
-						{config.sections.map(({ title, links, sections }) => (
-							<Section title={title} links={links} sections={sections} />
+						{config.sections.map(({ title, links }) => (
+							<section>
+								<h2>{title}</h2>
+								<div>
+									{links.map((link) => (
+										<a href={link.url}>{link.title}</a>
+									))}
+								</div>
+							</section>
 						))}
 					</main>
 					<footer>
