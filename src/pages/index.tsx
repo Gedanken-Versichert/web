@@ -65,7 +65,7 @@ export function IndexPage() {
 					</main>
 					<footer>
 						<span>
-							Copyright © <a href="https://github.com/noClaps">noClaps</a> 2023
+							Copyright © <a href="https://github.com/noClaps">noClaps</a> 2024
 						</span>
 						<span>&#x2022</span>
 						<a href="/legal/">Legal</a>
