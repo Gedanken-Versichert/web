@@ -1,29 +1,6 @@
 import config from "@/config.json";
 import { Search, Undo2 } from "lucide-static";
 
-const links = config.sections.flatMap((section) =>
-	section.links.flatMap((link) => link),
-);
-
-function SearchOverlay() {
-	return (
-		<div id="search-overlay">
-			<span>
-				<button id="return">{Undo2}</button>
-				<input type="search" id="search" placeholder="Search..." />
-			</span>
-			<ul id="results">
-				{links.map((link) => (
-					<a class="link" href={link.url}>
-						{link.title}
-					</a>
-				))}
-				<p id="fallback">No results found</p>
-			</ul>
-		</div>
-	);
-}
-
 export function IndexPage() {
 	return (
 		<>
@@ -40,8 +17,7 @@ export function IndexPage() {
 					/>
 					<link rel="stylesheet" href="/style.css" />
 					<link rel="stylesheet" href="/index.css" />
-					<link rel="stylesheet" href="/search.css" />
-					<script type="module" src="/search.js"></script>
+					<script type="module" src="/script.js"></script>
 				</head>
 				<body>
 					<header>
@@ -70,7 +46,20 @@ export function IndexPage() {
 						<span>&#x2022</span>
 						<a href="/legal/">Legal</a>
 					</footer>
-					<SearchOverlay />
+					<dialog id="search-overlay">
+						<span>
+							<form method="dialog">
+								<button id="return">{Undo2}</button>
+							</form>
+							<input
+								type="search"
+								id="search"
+								placeholder="Search..."
+								autofocus=""
+							/>
+						</span>
+						<ul id="results"></ul>
+					</dialog>
 				</body>
 			</html>
 		</>
