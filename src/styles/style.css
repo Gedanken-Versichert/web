@@ -12,6 +12,12 @@
 	--text: oklch(100% 0.25 var(--hue));
 }
 
+body {
+	min-height: 100dvh;
+	display: grid;
+	margin: 0 auto;
+}
+
 header {
 	text-align: center;
 	display: flex;

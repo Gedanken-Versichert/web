@@ -1,9 +1,6 @@
 body {
-	min-height: 100dvh;
-	display: grid;
 	grid-template-rows: auto 1fr auto;
 	max-width: 88dvw;
-	margin: 0 auto;
 }
 
 main {

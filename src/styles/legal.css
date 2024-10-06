@@ -1,18 +1,11 @@
-:root {
-	--links: oklch(75% 0.25 var(--hue));
-}
-
 body {
-	min-height: 100dvh;
-	display: grid;
 	grid-template-rows: auto auto 1fr auto;
 	width: 88dvw;
 	max-width: 64rem;
-	margin: 0 auto;
 }
 
 a {
-	color: var(--links);
+	color: oklch(75% 0.25 var(--hue));
 }
 
 p {
