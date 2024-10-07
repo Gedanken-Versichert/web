@@ -40,15 +40,10 @@ export function IndexPage() {
 							class={[
 								"cursor-pointer",
 								"bg-[--background]",
-								"border-solid",
-								"border-0.125rem",
-								"border-[--accent]",
+								"border-solid border-0.125rem border-[--accent]",
 								"rounded-0.5rem",
-								"flex",
-								"justify-center",
-								"items-center",
-								"transition",
-								"duration-250",
+								"flex justify-center items-center",
+								"transition duration-250",
 								"h-fit",
 								"hover:bg-[--accent]",
 							]}
@@ -79,14 +74,11 @@ export function IndexPage() {
 												"bg-[--accent]",
 												"p-0.75rem",
 												"w-[calc(100%-1.5rem)]",
-												"text-center",
+												"text-center text-1.125rem text-[--text]",
 												"rounded-0.5rem",
 												"no-underline",
-												"transition",
-												"duration-250",
-												"text-1.125rem",
+												"transition duration-250",
 												"hover:shadow-[0_0_0.5rem_0.25rem_var(--accent)]",
-												"text-[--text]",
 											]}
 										>
 											{link.title}
@@ -108,20 +100,14 @@ export function IndexPage() {
 					</footer>
 					<dialog
 						class={[
-							"[@starting-style]:opacity-0",
-							"[@starting-style]:invisible",
+							"[@starting-style]:opacity-0 [@starting-style]:invisible",
 							"absolute",
-							"h-[calc(100dvh-4rem)]",
-							"w-100dvw",
+							"h-[calc(100dvh-4rem)] w-100dvw",
 							"inset-0",
-							"bg-[--translucent]",
-							"backdrop-blur-1rem",
-							"items-center",
+							"bg-[--translucent] backdrop-blur-1rem",
 							"pt-4rem",
-							"flex-col",
-							"opacity-100",
-							"visible",
-							"open:flex",
+							"opacity-100 visible",
+							"open:flex flex-col items-center",
 						]}
 						id="search-overlay"
 					>
@@ -129,9 +115,7 @@ export function IndexPage() {
 							<form method="dialog">
 								<button
 									class={[
-										"flex",
-										"items-center",
-										"justify-center",
+										"flex items-center justify-center",
 										"h-max",
 										"bg-transparent",
 										"border-none",
@@ -146,18 +130,11 @@ export function IndexPage() {
 							<input
 								class={[
 									"bg-[--background]",
-									"border-solid",
-									"border-0.125rem",
-									"border-[--accent]",
-									"font-[Zodiak,serif]",
-									"text-[--text]",
-									"text-1.125rem",
-									"rounded-0.5rem",
+									"border-solid border-0.125rem border-[--accent] rounded-0.5rem",
+									"font-[Zodiak,serif] text-[--text] text-1.125rem",
 									"p-0.5rem",
-									"transition",
-									"duration-250",
-									"focus:shadow-[0_0_0.5rem_0.25rem_var(--accent)]",
-									"outline-none",
+									"transition duration-250",
+									"focus:shadow-[0_0_0.5rem_0.25rem_var(--accent)] focus:outline-none",
 								]}
 								type="search"
 								id="search"
@@ -167,12 +144,9 @@ export function IndexPage() {
 						</span>
 						<ul
 							class={[
-								"flex",
-								"flex-col",
+								"flex flex-col",
 								"list-none",
-								"border-b-0.125rem",
-								"border-b-solid",
-								"border-b-[--text]",
+								"border-b-0.125rem border-b-solid border-b-[--text]",
 								"pl-0",
 								"w-[min(64rem,88dvw)]",
 								"text-1.125rem",
