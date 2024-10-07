@@ -1,5 +1,5 @@
 import config from "@/config.json";
-import Fuse from "fuse.js";
+import MiniSearch from "minisearch";
 
 function Link(props: { title: string; url: string }) {
 	const { title, url } = props;
@@ -15,11 +15,16 @@ function Link(props: { title: string; url: string }) {
 
 const links = config.sections.flatMap((section) => section.links);
 
-const fuse = new Fuse(links, {
-	keys: ["title", "url"],
-	threshold: 0.2,
-	ignoreLocation: true,
+const minisearch = new MiniSearch<(typeof links)[0]>({
+	fields: ["title", "url"],
+	idField: "title",
+	storeFields: ["title", "url"],
+	searchOptions: {
+		prefix: true,
+		fuzzy: true,
+	},
 });
+minisearch.addAll(links);
 
 const input = document.querySelector<HTMLInputElement>("#search");
 if (!input) throw new Error("Input element not found");
@@ -32,14 +37,7 @@ resultsElem.innerHTML = links
 	.join("");
 
 input.addEventListener("input", () => {
-	if (input.value === "") {
-		resultsElem.innerHTML = links
-			.map((link) => <Link title={link.title} url={link.url} />)
-			.join("");
-		return;
-	}
-
-	const results = fuse.search(input.value);
+	const results = minisearch.search(input.value || MiniSearch.wildcard);
 
 	if (results.length === 0) {
 		resultsElem.innerHTML = (
@@ -51,7 +49,7 @@ input.addEventListener("input", () => {
 	}
 
 	resultsElem.innerHTML = results
-		.map((result) => <Link title={result.item.title} url={result.item.url} />)
+		.map((result) => <Link title={result.title} url={result.url} />)
 		.join("");
 });
 

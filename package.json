@@ -10,9 +10,9 @@
 	},
 	"dependencies": {
 		"@kitajs/html": "^4.2.2",
-		"fuse.js": "^7.0.0",
 		"lucide-static": "^0.447.0",
-		"marked": "^14.1.2"
+		"marked": "^14.1.2",
+		"minisearch": "^7.1.0"
 	},
 	"devDependencies": {
 		"@types/bun": "^1.1.10",
