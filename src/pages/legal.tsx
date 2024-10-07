@@ -8,7 +8,10 @@ export function LegalPage() {
 	return (
 		<>
 			{`<!doctype html>`}
-			<html lang="en">
+			<html
+				lang="en"
+				class={"font-[Zodiak,serif] bg-[--background] text-[--text]"}
+			>
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width" />
@@ -19,19 +22,25 @@ export function LegalPage() {
 						rel="stylesheet"
 					/>
 					<link rel="stylesheet" href="/style.css" />
-					<link rel="stylesheet" href="/legal.css" />
+					<link rel="stylesheet" href="/uno.css" />
 				</head>
-				<body>
-					<header>
-						<a href="/">
-							<h2>{config.title}</h2>
+				<body
+					class={
+						"min-h-dvh grid grid-rows-[auto_1fr_auto] mx-auto w-88dvw max-w-64rem"
+					}
+				>
+					<header class={"text-center flex justify-between items-center"}>
+						<a class={"grow no-underline text-[--text]"} href="/">
+							<h2 class={"text-2rem font-900"}>{config.title}</h2>
 						</a>
 					</header>
-					{legalHTML}
-					<footer>
-						<span>
-							Copyright © <a href="https://github.com/noClaps">noClaps</a> 2024
-						</span>
+					<main class={"legal"}>{legalHTML}</main>
+					<footer class={"p-1rem text-center"}>
+						Copyright ©{" "}
+						<a class={"text-[--text]"} href="https://github.com/noClaps">
+							noClaps
+						</a>{" "}
+						2024
 					</footer>
 				</body>
 			</html>

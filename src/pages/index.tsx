@@ -5,7 +5,10 @@ export function IndexPage() {
 	return (
 		<>
 			{`<!doctype html>`}
-			<html lang="en">
+			<html
+				lang="en"
+				class={"font-[Zodiak,serif] bg-[--background] text-[--text]"}
+			>
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width" />
@@ -16,49 +19,166 @@ export function IndexPage() {
 						rel="stylesheet"
 					/>
 					<link rel="stylesheet" href="/style.css" />
-					<link rel="stylesheet" href="/index.css" />
+					<link rel="stylesheet" href="/uno.css" />
 					<script type="module" src="/script.js"></script>
 				</head>
-				<body>
-					<header>
-						<span>
-							<h1>{config.title}</h1>
-							<p>{config.touchWarning}</p>
+				<body
+					class={"min-h-dvh grid grid-rows-[auto_1fr_auto] mx-auto max-w-88dvw"}
+				>
+					<header class={"text-center flex justify-between flex-items-center"}>
+						<span class={"grow"}>
+							<h1 class={"text-3rem font-900"}>{config.title}</h1>
+							<p
+								class={
+									"text-[red] text-1.125rem hidden [@media(any-pointer:coarse)]:block"
+								}
+							>
+								{config.touchWarning}
+							</p>
 						</span>
-						<button id="search-button">{Search}</button>
+						<button
+							class={[
+								"cursor-pointer",
+								"bg-[--background]",
+								"border-solid",
+								"border-0.125rem",
+								"border-[--accent]",
+								"rounded-0.5rem",
+								"flex",
+								"justify-center",
+								"items-center",
+								"transition",
+								"duration-250",
+								"h-fit",
+								"hover:bg-[--accent]",
+							]}
+							id="search-button"
+						>
+							{Search}
+						</button>
 					</header>
-					<main>
+					<main
+						class={
+							"grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] gap-1rem"
+						}
+					>
 						{config.sections.map(({ title, links }) => (
-							<section>
-								<h2>{title}</h2>
-								<div>
+							<section
+								class={
+									"border-solid border-0.125rem border-[--text] p-1.5rem rounded-0.5rem"
+								}
+							>
+								<h2 class={"text-center m-0 pb-1rem text-2rem font-750"}>
+									{title}
+								</h2>
+								<div class={"flex flex-col items-center gap-1rem"}>
 									{links.map((link) => (
-										<a href={link.url}>{link.title}</a>
+										<a
+											href={link.url}
+											class={[
+												"bg-[--accent]",
+												"p-0.75rem",
+												"w-[calc(100%-1.5rem)]",
+												"text-center",
+												"rounded-0.5rem",
+												"no-underline",
+												"transition",
+												"duration-250",
+												"text-1.125rem",
+												"hover:shadow-[0_0_0.5rem_0.25rem_var(--accent)]",
+												"text-[--text]",
+											]}
+										>
+											{link.title}
+										</a>
 									))}
 								</div>
 							</section>
 						))}
 					</main>
-					<footer>
-						<span>
-							Copyright © <a href="https://github.com/noClaps">noClaps</a> 2024
-						</span>
-						<span>&#x2022</span>
-						<a href="/legal/">Legal</a>
+					<footer class={"p-1rem text-center"}>
+						Copyright ©{" "}
+						<a class={"text-[--text]"} href="https://github.com/noClaps">
+							noClaps
+						</a>{" "}
+						2024 •{" "}
+						<a class={"text-[--text]"} href="/legal/">
+							Legal
+						</a>
 					</footer>
-					<dialog id="search-overlay">
-						<span>
+					<dialog
+						class={[
+							"[@starting-style]:opacity-0",
+							"[@starting-style]:invisible",
+							"absolute",
+							"h-[calc(100dvh-4rem)]",
+							"w-100dvw",
+							"inset-0",
+							"bg-[--translucent]",
+							"backdrop-blur-1rem",
+							"items-center",
+							"pt-4rem",
+							"flex-col",
+							"opacity-100",
+							"visible",
+							"open:flex",
+						]}
+						id="search-overlay"
+					>
+						<span class={"flex items-center gap-1rem"}>
 							<form method="dialog">
-								<button id="return">{Undo2}</button>
+								<button
+									class={[
+										"flex",
+										"items-center",
+										"justify-center",
+										"h-max",
+										"bg-transparent",
+										"border-none",
+										"cursor-pointer",
+										"text-[--text]",
+									]}
+									id="return"
+								>
+									{Undo2}
+								</button>
 							</form>
 							<input
+								class={[
+									"bg-[--background]",
+									"border-solid",
+									"border-0.125rem",
+									"border-[--accent]",
+									"font-[Zodiak,serif]",
+									"text-[--text]",
+									"text-1.125rem",
+									"rounded-0.5rem",
+									"p-0.5rem",
+									"transition",
+									"duration-250",
+									"focus:shadow-[0_0_0.5rem_0.25rem_var(--accent)]",
+									"outline-none",
+								]}
 								type="search"
 								id="search"
 								placeholder="Search..."
 								autofocus=""
 							/>
 						</span>
-						<ul id="results"></ul>
+						<ul
+							class={[
+								"flex",
+								"flex-col",
+								"list-none",
+								"border-b-0.125rem",
+								"border-b-solid",
+								"border-b-[--text]",
+								"pl-0",
+								"w-[min(64rem,88dvw)]",
+								"text-1.125rem",
+							]}
+							id="results"
+						></ul>
 					</dialog>
 				</body>
 			</html>

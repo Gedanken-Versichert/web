@@ -4,8 +4,9 @@
 	"private": "true",
 	"version": "0.0.0",
 	"scripts": {
-		"build": "bun run scripts/build.ts",
-		"preview": "bunx serve dist"
+		"build-css": "bunx unocss src/**/*.tsx -mo dist/uno.css",
+		"build": "bun run build-css && bun run scripts/build.ts",
+		"preview": "bunx serve -n dist"
 	},
 	"dependencies": {
 		"@kitajs/html": "^4.2.2",

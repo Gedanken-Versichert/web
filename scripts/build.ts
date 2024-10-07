@@ -1,14 +1,11 @@
 import { IndexPage } from "@/pages/index.tsx";
 import { LegalPage } from "@/pages/legal.tsx";
 
-// Write styles
-const styles = new Bun.Glob("*.css").scanSync("src/styles/");
-for (const css of styles) {
-	Bun.write(`dist/${css}`, Bun.file(`src/styles/${css}`));
-}
+// Write CSS
+Bun.write(`dist/style.css`, Bun.file(`src/styles/style.css`));
 
 // Build scripts
-const scripts = Array.from(new Bun.Glob("*.ts").scanSync("src/scripts"));
+const scripts = Array.from(new Bun.Glob("*.tsx").scanSync("src/scripts"));
 Bun.build({
 	entrypoints: scripts.map((s) => `src/scripts/${s}`),
 	outdir: "dist/",

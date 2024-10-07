@@ -1,68 +1,35 @@
 :root {
-	font-family: "Zodiak", serif;
-	background-color: var(--background);
-	color: var(--text);
-
-	/* Colors */
 	--hue: 272.37;
-
 	--accent: oklch(51.42% 0.236 var(--hue));
 	--background: oklch(0% 0.175 var(--hue));
 	--translucent: oklch(0% 0.175 var(--hue) / 80%);
 	--text: oklch(100% 0.25 var(--hue));
 }
 
-body {
-	min-height: 100dvh;
-	display: grid;
-	margin: 0 auto;
+/* Index */
+#search-button svg {
+	color: var(--text);
 }
 
-header {
-	text-align: center;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-
-	span,
+/* Legal */
+.legal {
 	a {
-		flex-grow: 1;
-	}
-
-	h1 {
-		font-size: 3rem;
-		font-weight: 900;
-	}
-
-	h2 {
-		font-size: 2rem;
-		font-weight: 900;
+		color: oklch(75% 0.25 var(--hue));
 	}
 
 	p {
-		color: red;
 		font-size: 1.125rem;
-		display: none;
-
-		@media (any-pointer: coarse) {
-			display: block;
-		}
 	}
 
-	a {
-		color: var(--text);
-		text-decoration: none;
-		flex-grow: 1;
+	h1 {
+		font-size: 2.5rem;
 	}
-}
 
-footer {
-	padding: 1rem;
-	display: flex;
-	justify-content: center;
-	gap: 0.25rem;
+	h2 {
+		font-size: 1.875rem;
+	}
 
-	a {
-		color: var(--text);
+	h3 {
+		font-size: 1.5rem;
 	}
 }
