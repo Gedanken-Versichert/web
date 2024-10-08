@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@kitajs/html": "^4.2.2",
-		"lucide-static": "^0.447.0",
+		"lucide-static": "^0.451.0",
 		"marked": "^14.1.2",
 		"minisearch": "^7.1.0"
 	},

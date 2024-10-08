@@ -5,9 +5,8 @@ import { LegalPage } from "@/pages/legal.tsx";
 Bun.write(`dist/style.css`, Bun.file(`src/styles/style.css`));
 
 // Build scripts
-const scripts = Array.from(new Bun.Glob("*.tsx").scanSync("src/scripts"));
 Bun.build({
-	entrypoints: scripts.map((s) => `src/scripts/${s}`),
+	entrypoints: ["src/scripts/script.tsx"],
 	outdir: "dist/",
 	minify: true,
 });
