@@ -90,7 +90,7 @@ export function IndexPage() {
 					</main>
 					<footer class={"p-1rem text-center"}>
 						Copyright ©{" "}
-						<a class={"text-[--text]"} href="https://github.com/noClaps">
+						<a class={"text-[--text]"} href="https://zerolimits.dev">
 							noClaps
 						</a>{" "}
 						2024 •{" "}
