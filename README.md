@@ -4,7 +4,8 @@
 
 1. Open `src/config.json` in a text editor of your choice.
 
-2. Customise the values inside as needed. The details for the values can be found in [Configuration](#configuration).
+2. Customise the values inside as needed. The details for the values can be found in code autocompletion as you write
+   the configuration file in your IDE.
 
 3. Follow the [build instructions](#build-instructions), and deploy the site!
 
@@ -17,19 +18,19 @@
    cd web
    ```
 
-2. Install dependencies and start the development server.
-
-   ```sh
-   bun install
-   bun dev
-   ```
-
-   Then open `localhost:3000` in your browser to see a live preview of the site.
-
-3. Build the site.
+2. Build the site.
 
    ```sh
    bun run build
    ```
 
    This will build the site and place it in `dist/`
+
+3. Preview the site.
+
+   ```sh
+   bun run preview
+   ```
+
+   This will start a preview server from the `dist/` directory. Ensure that the site has been built using
+   `bun run build` first.
