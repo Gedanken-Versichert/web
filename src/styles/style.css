@@ -1,0 +1,35 @@
+:root {
+	--hue: 272.37;
+	--accent: oklch(51.42% 0.236 var(--hue));
+	--background: oklch(0% 0.175 var(--hue));
+	--translucent: oklch(0% 0.175 var(--hue) / 80%);
+	--text: oklch(100% 0.25 var(--hue));
+}
+
+/* Index */
+#search-button svg {
+	color: var(--text);
+}
+
+/* Legal */
+.legal {
+	a {
+		color: oklch(75% 0.25 var(--hue));
+	}
+
+	p {
+		font-size: 1.125rem;
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.875rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+}

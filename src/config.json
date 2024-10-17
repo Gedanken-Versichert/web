@@ -1,49 +1,47 @@
 {
-    "title": "Gedanken Versichert",
-    "description": "",
-    "sections": [
-        {
-            "title": "Mathetmatics",
-            "links": [
-                {
-                    "title": "Primality test - by Botond",
-                    "url": "/programs/prime-test/"
-                }
-            ],
-            "sections": []
-        },
-        {
-            "title": "Physics",
-            "links": [
-                {
-                    "title": "Parabola motion - by Bendegúz & Botond",
-                    "url": "/programs/parabola-motion/"
-                },
-                {
-                    "title": "Newtonian gravity - by Bendegúz",
-                    "url": "/programs/newtonsche-gravitation/"
-                },
-                {
-                    "title": "Two-body simulation using Verlet Integration - by Bendegúz & Botond",
-                    "url": "/programs/two-body-simulation/"
-                }
-            ],
-            "sections": []
-        },
-        {
-            "title": "Programming",
-            "links": [
-                {
-                    "title": "Vortex graphics - by Bendegúz",
-                    "url": "/programs/random-points/"
-                },
-                {
-                    "title": "A* algorithm: Maze solver - by Botond",
-                    "url": "/programs/astar-maze/"
-                }
-            ],
-            "sections": []
-        }
-    ],
-    "touchWarning": "WARNING: \"Parabola motion\" and \"Vortex graphics\" are not optimized for mobile devices."
+	"$schema": "./config.schema.json",
+	"title": "Gedanken Versichert",
+	"description": "",
+	"sections": [
+		{
+			"title": "Mathetmatics",
+			"links": [
+				{
+					"title": "Primality test - by Botond",
+					"url": "/programs/prime-test/"
+				}
+			]
+		},
+		{
+			"title": "Physics",
+			"links": [
+				{
+					"title": "Parabola motion - by Bendegúz & Botond",
+					"url": "/programs/parabola-motion/"
+				},
+				{
+					"title": "Newtonian gravity - by Bendegúz",
+					"url": "/programs/newtonsche-gravitation/"
+				},
+				{
+					"title": "Two-body simulation using Verlet Integration - by Bendegúz & Botond",
+					"url": "/programs/two-body-simulation/"
+				}
+			]
+		},
+		{
+			"title": "Programming",
+			"links": [
+				{
+					"title": "Vortex graphics - by Bendegúz",
+					"url": "/programs/random-points/"
+				},
+				{
+					"title": "A* algorithm: Maze solver - by Botond",
+					"url": "/programs/astar-maze/"
+				}
+			]
+		}
+	],
+	"touchWarning": "WARNING: \"Parabola motion\" and \"Vortex graphics\" are not optimized for mobile devices."
 }

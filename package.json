@@ -1,18 +1,21 @@
 {
-  "name": "gedanken-versichert",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^4.0.1",
-    "fuse.js": "^7.0.0",
-    "lucide-astro": "^0.294.0",
-    "sass": "^1.69.5"
-  }
+	"name": "gedanken-versichert",
+	"type": "module",
+	"private": "true",
+	"version": "0.0.0",
+	"scripts": {
+		"build-css": "bunx unocss src/**/*.tsx -mo dist/uno.css",
+		"build": "bun run build-css && bun run scripts/build.ts",
+		"preview": "bunx serve -n dist"
+	},
+	"dependencies": {
+		"@kitajs/html": "^4.2.2",
+		"lucide-static": "^0.451.0",
+		"marked": "^14.1.2",
+		"minisearch": "^7.1.0"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.1.11",
+		"typescript": "^5.6.3"
+	}
 }

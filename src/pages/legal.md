@@ -1,7 +1,3 @@
----
-layout: ../layouts/LegalPageLayout.astro
----
-
 # Privacy Policy
 
 Last updated: 2023-11-05
