@@ -1,14 +1,13 @@
 import { IndexPage } from "@/pages/index.tsx";
 import { LegalPage } from "@/pages/legal.tsx";
 
-// Write CSS
-Bun.write(`dist/style.css`, Bun.file(`src/styles/style.css`));
-
-// Build scripts
+// Build scripts and styles
 Bun.build({
-	entrypoints: ["src/scripts/script.tsx"],
-	outdir: "dist/",
-	minify: true,
+  entrypoints: ["src/scripts/script.tsx", "src/styles/style.css"],
+  outdir: "dist/",
+  minify: true,
+  naming: "/[name].[ext]",
+  experimentalCss: true,
 });
 
 // Make index page
