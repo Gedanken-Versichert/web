@@ -11,6 +11,12 @@
 
 ## Build instructions
 
+Building the site requires:
+
+- Bun v1.1.31
+
+Steps:
+
 1. Clone the repository
 
    ```sh
