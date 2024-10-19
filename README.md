@@ -27,6 +27,7 @@ Steps:
 2. Build the site.
 
    ```sh
+   bun install
    bun run build
    ```
 
